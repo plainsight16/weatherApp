@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+    margin: 0;
+    padding: 0;
+}
+button, input{
+    font-family: inherit;
+    outline: 0;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+
+
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans";
+    font-weight: 400;
+}
