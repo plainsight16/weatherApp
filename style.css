@@ -57,6 +57,7 @@ button{
     justify-content: center;
     align-items: center;
     color: white;
+    cursor: pointer;
     background: #7c7c7c2b;
     transition: 0.2s ease-in-out;
     
@@ -68,19 +69,21 @@ button:hover {
 
 
 body{
-    padding: 2rem;
     height: 100vh;
     display: flex;
     background-color: #222;
+    background-image: url(https://source.unsplash.com/1600x900/?landscape);
     justify-content: center;
     align-items: center;
     font-family: "Open Sans";
+    font-size: 120%;
     font-weight: 200;
 }
 
 .card{
     width: 100%;
     max-width: 420px;
+    margin-inline: 2rem;
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
