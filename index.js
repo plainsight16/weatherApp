@@ -14,7 +14,7 @@ const getCoordinates = (city) =>{
         const {lat, lon} = data[0];
         fetchWeather(lat, lon);
     })
-    .catch(err => console.log(err));
+    .catch(err => alert(`Enter valid city`));
 }
 
 const updateContent = (data) =>{
