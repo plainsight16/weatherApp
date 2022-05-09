@@ -7,7 +7,7 @@ const fetchWeather = (lat, lon) =>{
 }
 
 const getCoordinates = (city) =>{
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}
     &limit=${1}&appid=${apiKey}`)
     .then(response => response.json())
     .then(data =>{
