@@ -13,12 +13,14 @@ const getCoordinates = (city) =>{
     .then(data =>{
         const {lat, lon} = data[0];
         fetchWeather(lat, lon);
-    });
+    })
+    .catch((err) =>{
+        alert(`Invalid City`)
+    })
 }
 
 const updateContent = (data) =>{
     document.querySelector(".weather").classList.remove("loading");
-    console.log(data);
     const {name} = data;
     const {temp, pressure} = data.main;
     const {description, icon} = data.weather[0];
@@ -33,17 +35,34 @@ const updateContent = (data) =>{
     "url('https://source.unsplash.com/1600x900/?" + input.value + "')";
 }
 
-getCoordinates("Lagos");
+const getdefaultCity = () => {
+    const apikey = 'at_6LDGx376YFUU95TGL54y3ftV7SRae';
+
+    fetch('https://geo.ipify.org/api/v2/country,city?apiKey='
+    +apikey
+    +'&ipAddress='
+    )
+    .then(response => response.json())
+    .then(data => {
+        const {lat, lng} = data.location;
+        fetchWeather(lat, lng);
+    })
+};
+
+
+getdefaultCity();
 
 const searchBtn = document.querySelector("#searchBtn");
 const input = document.querySelector("#searchBar")
 
 searchBtn.addEventListener("click", () =>{
+    document.querySelector(".weather").classList.add("loading");
     getCoordinates(input.value);
 })
 
 input.addEventListener("keyup", (event) =>{
     if (event.key === "Enter"){
+        document.querySelector(".weather").classList.add("loading");
         getCoordinates(input.value);
     }
 })

@@ -112,6 +112,9 @@ body{
 .icon{
     align-items: center;
 }
+.icon p{
+    text-transform: capitalize;
+}
 
 .more-info{
     margin-left: 8px;
