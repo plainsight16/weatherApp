@@ -10,7 +10,7 @@ This weather App incoporates three(3) Apis namely;
 - Use the search-bar to search for desired city weather
 
 # Screenshot
-![](./weatherApp-london-desktop.png);
+![](./Weather-app-Amsterdam.png);
 
 # Live URL
 [weatherApp](https://plainsight16.github.io/weatherApp)
