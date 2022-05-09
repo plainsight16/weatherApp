@@ -17,19 +17,23 @@ const getCoordinates = (city) =>{
 }
 
 const updateContent = (data) =>{
+    document.querySelector(".weather").classList.remove("loading");
     console.log(data);
-    const {temp, humidty} = data.main;
+    const {name} = data;
+    const {temp, pressure} = data.main;
     const {description, icon} = data.weather[0];
     const {speed} = data.wind;
-    document.querySelector(".city").textContent = `Weather in ${input.value}`;
+    document.querySelector(".city").textContent = `Weather in ${name}`;
     document.querySelector(".temp").textContent =  `${temp}°C`;
     document.querySelector("#icon").src = `https://openweathermap.org/img/wn/${icon}.png`
     document.querySelector("#desc").textContent = description;
-    document.querySelector("#speed").textContent =`${speed}km/h`;
-    document.querySelector("#humidty").textContent = `${humidty}%`;
+    document.querySelector("#speed").textContent =`Wind speed: ${speed}km/h`;
+    document.querySelector("#humidty").textContent = `Pressure: ${pressure}mmHg`;
     document.body.style.backgroundImage =
     "url('https://source.unsplash.com/1600x900/?" + input.value + "')";
 }
+
+getCoordinates("Lagos");
 
 const searchBtn = document.querySelector("#searchBtn");
 const input = document.querySelector("#searchBar")

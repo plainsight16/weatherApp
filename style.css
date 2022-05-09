@@ -92,8 +92,21 @@ body{
     border-radius: 2rem; 
 
 }
+
+.weather.loading{
+    position: relative;
+    visibility: hidden;
+    max-height: 20px;
+}
+.weather.loading::after{
+    position: absolute;
+    visibility: visible;
+    content: "...loading";
+    top: 0;
+}
 .city,
 .temp{
+    margin-left: 8px;
     font-weight: 400;
 }
 .icon{
@@ -101,6 +114,7 @@ body{
 }
 
 .more-info{
+    margin-left: 8px;
     flex-direction: column;
     gap: 0.2rem;
 }
