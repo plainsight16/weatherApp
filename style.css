@@ -73,6 +73,8 @@ body{
     display: flex;
     background-color: #222;
     background-image: url(https://source.unsplash.com/1600x900/?landscape);
+    background-size: cover;
+    background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     font-family: "Open Sans";
