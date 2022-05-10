@@ -1,13 +1,13 @@
 const apiKey = `a52e040256e3ac2c1ccd162104229cf4`;
 
-const fetchWeather = (lat, lon) =>{
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+async function fetchWeather (lat, lon){
+   await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
     .then(response => response.json())
     .then(data => updateContent(data));
 }
 
-const getCoordinates = (city) =>{
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}
+async function getCoordinates (city){
+   await  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}
     &limit=${1}&appid=${apiKey}`)
     .then(response => response.json())
     .then(data =>{
@@ -33,10 +33,10 @@ const updateContent = (data) =>{
     "url('https://source.unsplash.com/1600x900/?" + input.value + "')";
 }
 
-const getdefaultCity = () => {
+async function getdefaultCity (){
     const apikey = 'at_6LDGx376YFUU95TGL54y3ftV7SRae';
 
-    fetch('https://geo.ipify.org/api/v2/country,city?apiKey='
+    await fetch('https://geo.ipify.org/api/v2/country,city?apiKey='
     +apikey
     +'&ipAddress='
     )
